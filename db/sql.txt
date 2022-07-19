@@ -1,0 +1,1101 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.8-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             10.2.0.5599
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+
+-- Dumping database structure for diklatpim_e_dupak
+CREATE DATABASE IF NOT EXISTS `diklatpim_e_dupak` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `diklatpim_e_dupak`;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_butir_kegiatan
+CREATE TABLE IF NOT EXISTS `ref_butir_kegiatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `id_unsur` int(11) NOT NULL,
+  `urutan` int(11) NOT NULL,
+  `butir_kegiatan` text DEFAULT NULL,
+  `satuan_hasil` text DEFAULT NULL,
+  `angka_kredit` double DEFAULT NULL,
+  PRIMARY KEY (`id_jabatan`,`id_kategori`,`id_jenjang`,`id_unsur`,`urutan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_butir_kegiatan: ~443 rows (approximately)
+/*!40000 ALTER TABLE `ref_butir_kegiatan` DISABLE KEYS */;
+INSERT INTO `ref_butir_kegiatan` (`id_jabatan`, `id_kategori`, `id_jenjang`, `id_unsur`, `urutan`, `butir_kegiatan`, `satuan_hasil`, `angka_kredit`) VALUES
+  (23, 1, 1, 1, 1, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : Diploma II/III', 'Ijazah', 50),
+  (23, 1, 1, 1, 2, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : SLTA/D1', 'Ijazah', 25),
+  (23, 1, 1, 1, 3, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya lebih 960 jam', 'Sertifikat', 15),
+  (23, 1, 1, 1, 4, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 641 - 960 jam', 'Sertifikat', 9),
+  (23, 1, 1, 1, 5, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 401 - 640 jam', 'Sertifikat', 6),
+  (23, 1, 1, 1, 6, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 161 - 400 jam', 'Sertifikat', 3),
+  (23, 1, 1, 1, 7, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 81 - 160 jam', 'Sertifikat', 2),
+  (23, 1, 1, 1, 8, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 30 - 80 jam', 'Sertifikat', 1),
+  (23, 1, 1, 2, 1, 'Mengolah data tingkat lanjut dalam rangka menyiapkan penyusunan rencana lima tahunan  tingkat Propinsi;', 'Rancangan', 0.26),
+  (23, 1, 1, 2, 2, 'Menganalisis data lanjut untuk menyusun rencana lima tahunan  tingkat Kabupaten/Kota', 'Laporan', 0.52),
+  (23, 1, 1, 2, 3, 'Menyusun rancangan rencana lima tahunan tingkat Propinsi', 'Rancangan', 1.02),
+  (23, 1, 1, 2, 4, 'Menyajikan rancangan rencana lima tahunan tingkat Propinsi;', 'Rancangan', 0.18),
+  (23, 1, 1, 2, 5, 'Menyusun TOR untuk menyiapkan rencana tahunan tingkat Propinsi;', 'Rancangan', 0.18),
+  (23, 1, 1, 2, 6, 'Mengolah data lanjut untuk rencana tahunan tingkat Propinsi;', 'Laporan', 0.38),
+  (23, 1, 1, 2, 7, 'Menganalisis data sederhana untuk menyusun rencana tahunan tingkat Propinsi;', 'Laporan', 0.42),
+  (23, 1, 1, 2, 8, 'Menganalisis data tingkat lanjut untuk menyusun rencana tahunan  tingkat Kabupaten/Kota;', 'Laporan', 0.38),
+  (23, 1, 1, 2, 9, 'Menyusun rancangan rencana tahunan tingkat kabupaten/ Kota;', 'Rancangan', 0.4),
+  (23, 1, 1, 2, 10, 'Menyempurnakan rancangan rencana tahunan tingkat Kabupaten/ Kota;', 'Rancangan', 0.36),
+  (23, 1, 1, 2, 11, 'Menyusun rancangan petunjuk petunjuk teknis/ petunjuk pelaksanaan;', 'Laporan', 0.104),
+  (23, 1, 1, 2, 12, 'Menyusun data/literatur dalam rangka penyusunan standar; ', 'Laporan', 0.336),
+  (23, 1, 1, 2, 13, 'Melaksanakan studi kelayakan;', 'Laporan', 2.4),
+  (23, 1, 1, 2, 14, 'Mengolah data studi kelayakan;', 'Sampel', 0.48),
+  (23, 1, 1, 2, 15, 'Melakukan pemeriksaan secara canggih pada objek kelompok II;', 'Laporan', 0.2),
+  (23, 1, 1, 2, 16, 'Mengambil sampel secara canggih pada objek kelompok II;', 'Sampel', 0.16),
+  (23, 1, 1, 2, 17, 'Menentukan diagnosa dan treatment intervensi secara konvensional pada objek kelompok I lanjut;', 'Rekomendasi', 0.1),
+  (23, 1, 1, 2, 18, 'Menentukan diagnosa dan treatment intervensi awal secara canggih pada objek kelompok II;', 'Rekomendasi', 0.18),
+  (23, 1, 1, 2, 19, 'Melakukan konsultasi kesehatan lingkungan awal secara nasional pada objek kelompok I;', 'Laporan', 0.08),
+  (23, 1, 1, 2, 20, 'Melakukan konsultasi kesehatan lingkungan objek kelompok II awal regional;', 'Laporan', 0.12),
+  (23, 1, 1, 2, 21, 'Melakukan kunjungan/bimbingan teknis kelompok I regional;', 'Laporan', 0.14),
+  (23, 1, 1, 2, 22, 'Melakukan pemberdayaan kelompok umum;', 'Laporan', 0.04),
+  (23, 1, 1, 2, 23, 'Melakukan pemberdayaan kelompok potensial;', 'Laporan', 0.06),
+  (23, 1, 1, 2, 24, 'Membuat percontohan untuk pemberdayaan masyarakat.', 'Laporan', 0.8),
+  (23, 1, 1, 3, 1, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam bentuk buku yang diterbitkan dan diedarkan secara nasional ', 'Karya', 12.5),
+  (23, 1, 1, 3, 2, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam majalah ilmiah yang diakui instansi berwenang (LIPI) ', 'Karya', 6),
+  (23, 1, 1, 3, 3, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Buku', 'Buku', 7),
+  (23, 1, 1, 3, 4, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Makalah', 'Makalah', 3.5),
+  (23, 1, 1, 3, 5, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Buku', 'Buku', 8),
+  (23, 1, 1, 3, 6, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Makalah', 'Makalah', 4),
+  (23, 1, 1, 3, 7, 'Tulisan ilmiah populer di bidang kesehatan lingkungan yang disebarluaskan melalui media massa', 'Karya', 2),
+  (23, 1, 1, 3, 8, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Buku yang diterbitkan atau diedarkan  secara nasional', 'Buku', 7),
+  (23, 1, 1, 3, 9, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Majalah ilmiah yang diakui oleh instansi yang berwenang (LIPI)', 'Naskah', 3.5),
+  (23, 1, 1, 3, 10, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Buku', 'Buku', 3),
+  (23, 1, 1, 3, 11, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Makalah', 'Makalah', 1.5),
+  (23, 1, 1, 3, 12, 'Membuat abstrak tulisan ilmiah yang dimuat  dalam penerbitan', 'Makalah', 1.5),
+  (23, 1, 1, 3, 13, 'Membimbing sanitarian yang berada di bawah jenjang jabatan', 'Bimbingan ', 0.02),
+  (23, 1, 1, 3, 14, '"Membuat buku pedoman petunjuk pelaksanaan ', ' petunjuk tehnis di bidang kesehatan lingkungan"', 0),
+  (23, 1, 1, 3, 15, 'mengembangkan tehnologi tepat guna di bidang kesehatan lingkungan', 'Kali', 5),
+  (23, 1, 1, 4, 1, 'mengajar melatih pada pendidikan dan pelatihan pegawai', '2 Jam Pelajaran ', 0.04),
+  (23, 1, 1, 4, 2, 'Mengikuti Seminar lokakarya internasional  sebagai : Pemasaran', 'Kali', 3),
+  (23, 1, 1, 4, 3, '"Mengikuti Seminar lokakarya internasional  sebagai : pembahasan moderator', ' narasumber"', 0),
+  (23, 1, 1, 4, 4, 'Mengikuti Seminar lokakarya internasional  sebagai : Peserta', 'Kali', 1),
+  (23, 1, 1, 4, 5, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai ketua"', 0),
+  (23, 1, 1, 4, 6, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai anggota"', 0),
+  (23, 1, 1, 4, 7, 'Tingkat Internasional/ Nasional sebagai : Pengurus aktif', 'Tahun', 1),
+  (23, 1, 1, 4, 8, 'Tingkat Internasional/ Nasional sebagai : Sebagai anggota', 'Tahun', 0.75),
+  (23, 1, 1, 4, 9, 'Tingkat Propinsi : Pengurus Aktif', 'Tahun', 0.5),
+  (23, 1, 1, 4, 10, 'Tingkat Propinsi : Anggota Aktif', 'Tahun', 0.35),
+  (23, 1, 1, 4, 11, 'Menjadi anggota aktif tim penilai', 'Tahun', 0.5),
+  (23, 1, 1, 4, 12, '"Ikut serta dalam kegiatan organisasi sosial (LKMD', ' Pramuka', 0),
+  (23, 1, 1, 4, 13, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Diploma IV', 'Ijazah/ gelar', 5),
+  (23, 1, 1, 4, 14, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Muda/ Diploma II/ Diploma I', 'Ijazah/ gelar', 3),
+  (23, 1, 1, 4, 15, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Nasional', 0),
+  (23, 1, 1, 4, 16, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Propinsi"', 0),
+  (23, 1, 1, 4, 17, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Kabupaten/ Kota"', 0),
+  (23, 1, 1, 4, 18, ' Gelar kehormatan di Bidang akademis', 'Gelar', 15),
+  (23, 1, 2, 1, 1, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : Diploma II/III', 'Ijazah', 50),
+  (23, 1, 2, 1, 2, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : SLTA/D1', 'Ijazah', 25),
+  (23, 1, 2, 1, 3, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya lebih 960 jam', 'Sertifikat', 15),
+  (23, 1, 2, 1, 4, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 641 - 960 jam', 'Sertifikat', 9),
+  (23, 1, 2, 1, 5, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 401 - 640 jam', 'Sertifikat', 6),
+  (23, 1, 2, 1, 6, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 161 - 400 jam', 'Sertifikat', 3),
+  (23, 1, 2, 1, 7, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 81 - 160 jam', 'Sertifikat', 2),
+  (23, 1, 2, 1, 8, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 30 - 80 jam', 'Sertifikat', 1),
+  (23, 1, 2, 2, 1, 'Mengumpulkan data untuk menyusun rencana lima tahunan tingkat Pusat;', 'Laporan', 0.11),
+  (23, 1, 2, 2, 2, 'Mengolah data secara sederhana untuk menyusun rencana lima tahunan tingkat Pusat;', 'Laporan', 0.17),
+  (23, 1, 2, 2, 3, 'Menganalisa data secara sederhana untuk menyusun rencara lima tahunan tingkat Kabupaten/Kota;', 'Laporan', 0.24),
+  (23, 1, 2, 2, 4, 'Menyajikan rancangan rencana lima tahunan tingkat Kabupaten/ Kota; ', 'Rancangan', 0.09),
+  (23, 1, 2, 2, 5, 'Mengumpulkan data untuk menyusun rencana tahunan tingkat Propinsi;', 'Rancangan', 0.16),
+  (23, 1, 2, 2, 6, 'Mengumpulkan data untuk menyusun rencana tahunan tingkat Pusat;', 'Laporan', 0.16),
+  (23, 1, 2, 2, 7, 'Mengolah data secara lanjut untuk menyusun rencana tahunan tingkat Kabupaten/Kota;', 'Laporan', 0.19),
+  (23, 1, 2, 2, 8, 'Menganalisis data secara sederhana untuk menyusun rencana tahunan tingkat Kabupaten/Kota;', 'Laporan', 0.16),
+  (23, 1, 2, 2, 9, 'Menyusun rancangan rencana tahunan tingkat Kecamatan/ Puskesmas', 'Rancangan', 0.2),
+  (23, 1, 2, 2, 10, 'Menyajikan rancangan rencana tahunan tingkat Kabupaten/ Kota;', 'Rancangan', 0.07),
+  (23, 1, 2, 2, 11, 'Menyempurnakan rancangan rencana tahunan tingkat Kecamatan/ Puskesmas', 'Rancangan', 0.18),
+  (23, 1, 2, 2, 12, 'Menyusun rencana tiga bulanan tingkat Kabupaten/Kota;', 'Rancangan', 0.33),
+  (23, 1, 2, 2, 13, 'Menyusun rencana bulanan tingkat Kabupaten/Kota;', 'Rancangan', 0.33),
+  (23, 1, 2, 2, 14, 'Menyusun rencana operasional tingkat Kabupaten/Kota;', 'Rancangan', 0.26),
+  (23, 1, 2, 2, 15, 'Menyusun data literatur untuk menyusun peraturan;', 'Laporan', 0.54),
+  (23, 1, 2, 2, 16, 'Menyiapkan lapangan untuk pelaksanaan studi kelayakan; ', 'Laporan', 0.48),
+  (23, 1, 2, 2, 17, 'Melakukan pengolahan data dengan alat bantu elektronik;', 'Laporan', 0.07),
+  (23, 1, 2, 2, 18, 'Melakukan pemeriksaan objek kelompok II secara konvensional;', 'Laporan', 0.08),
+  (23, 1, 2, 2, 19, 'Mengambil sample objek kelompok II konvensional;', 'Sampel', 0.07),
+  (23, 1, 2, 2, 20, 'Menentukan diagnosa dan treatment intervensi objek kelompok I lanjut sederhana;', 'Rekomendasi', 0.05),
+  (23, 1, 2, 2, 21, 'Menentukan diagnosa dan treatment intervensi objek kelompok II awal konvensional;', 'Rekomendasi', 0.04),
+  (23, 1, 2, 2, 22, 'Melakukan konsultasi kesehatan lingkungan objek kelompok I awal regional;', 'Laporan', 0.04),
+  (23, 1, 2, 2, 23, 'Melakukan konsultasi kesehatan lingkungan objek kelompok II awal lokal;', 'Laporan', 0.05),
+  (23, 1, 2, 2, 24, 'Melakukan kunjungan/bimtek ke objek kelompok I lokal;', 'Laporan', 0.07),
+  (23, 1, 2, 2, 25, 'Melakukan tabulasi dan pengumpulan data lanjut untuk menganalisa perilaku;', 'Laporan', 0.09),
+  (23, 1, 2, 2, 26, 'Melakukan analisis lanjut untuk menganalisa perilaku;', 'Laporan', 0.06),
+  (23, 1, 2, 2, 27, 'Membuat kesimpulan dan laporan untuk menganalisa perilaku', 'Laporan', 0.04),
+  (23, 1, 2, 2, 28, 'Membuat perencanaan tingkat lanjut untuk pemberdayaan masyarakat;', 'Rencana', 0.24),
+  (23, 1, 2, 2, 29, 'Mengembangkan materi tingkat lanjut untuk pemberdayaan masyarakat;', 'Materi', 0.24),
+  (23, 1, 2, 2, 30, 'Melakukan pemberdayaan individu potensial;', 'Laporan', 0.02),
+  (23, 1, 2, 2, 31, 'Melakukan tabulasi danpengolahan data untuk menggerakkan kelompok potensial masyarakat;', 'Laporan', 0.14),
+  (23, 1, 2, 2, 32, 'Melatih calon kader untuk mendapatkan kader;', 'Laporan', 0.21),
+  (23, 1, 2, 2, 33, 'Membina calon kader untuk mendapatkan kader;', 'Laporan', 0.06),
+  (23, 1, 2, 2, 34, 'Membimbing survei desa sendiri.', 'Laporan', 0.24),
+  (23, 1, 2, 3, 1, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam bentuk buku yang diterbitkan dan diedarkan secara nasional ', 'Karya', 12.5),
+  (23, 1, 2, 3, 2, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam majalah ilmiah yang diakui instansi berwenang (LIPI) ', 'Karya', 6),
+  (23, 1, 2, 3, 3, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Buku', 'Buku', 7),
+  (23, 1, 2, 3, 4, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Makalah', 'Makalah', 3.5),
+  (23, 1, 2, 3, 5, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Buku', 'Buku', 8),
+  (23, 1, 2, 3, 6, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Makalah', 'Makalah', 4),
+  (23, 1, 2, 3, 7, 'Tulisan ilmiah populer di bidang kesehatan lingkungan yang disebarluaskan melalui media massa', 'Karya', 2),
+  (23, 1, 2, 3, 8, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Buku yang diterbitkan atau diedarkan  secara nasional', 'Buku', 7),
+  (23, 1, 2, 3, 9, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Majalah ilmiah yang diakui oleh instansi yang berwenang (LIPI)', 'Naskah', 3.5),
+  (23, 1, 2, 3, 10, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Buku', 'Buku', 3),
+  (23, 1, 2, 3, 11, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Makalah', 'Makalah', 1.5),
+  (23, 1, 2, 3, 12, 'Membuat abstrak tulisan ilmiah yang dimuat  dalam penerbitan', 'Makalah', 1.5),
+  (23, 1, 2, 3, 13, 'Membimbing sanitarian yang berada di bawah jenjang jabatan', 'Bimbingan ', 0.02),
+  (23, 1, 2, 3, 14, '"Membuat buku pedoman petunjuk pelaksanaan ', ' petunjuk tehnis di bidang kesehatan lingkungan"', 0),
+  (23, 1, 2, 3, 15, 'mengembangkan tehnologi tepat guna di bidang kesehatan lingkungan', 'Kali', 5),
+  (23, 1, 2, 4, 1, 'mengajar melatih pada pendidikan dan pelatihan pegawai', '2 Jam Pelajaran ', 0.04),
+  (23, 1, 2, 4, 2, 'Mengikuti Seminar lokakarya internasional  sebagai : Pemasaran', 'Kali', 3),
+  (23, 1, 2, 4, 3, '"Mengikuti Seminar lokakarya internasional  sebagai : pembahasan moderator', ' narasumber"', 0),
+  (23, 1, 2, 4, 4, 'Mengikuti Seminar lokakarya internasional  sebagai : Peserta', 'Kali', 1),
+  (23, 1, 2, 4, 5, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai ketua"', 0),
+  (23, 1, 2, 4, 6, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai anggota"', 0),
+  (23, 1, 2, 4, 7, 'Tingkat Internasional/ Nasional sebagai : Pengurus aktif', 'Tahun', 1),
+  (23, 1, 2, 4, 8, 'Tingkat Internasional/ Nasional sebagai : Sebagai anggota', 'Tahun', 0.75),
+  (23, 1, 2, 4, 9, 'Tingkat Propinsi : Pengurus Aktif', 'Tahun', 0.5),
+  (23, 1, 2, 4, 10, 'Tingkat Propinsi : Anggota Aktif', 'Tahun', 0.35),
+  (23, 1, 2, 4, 11, 'Menjadi anggota aktif tim penilai', 'Tahun', 0.5),
+  (23, 1, 2, 4, 12, '"Ikut serta dalam kegiatan organisasi sosial (LKMD', ' Pramuka', 0),
+  (23, 1, 2, 4, 13, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Diploma IV', 'Ijazah/ gelar', 5),
+  (23, 1, 2, 4, 14, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Muda/ Diploma II/ Diploma I', 'Ijazah/ gelar', 3),
+  (23, 1, 2, 4, 15, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Nasional', 0),
+  (23, 1, 2, 4, 16, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Propinsi"', 0),
+  (23, 1, 2, 4, 17, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Kabupaten/ Kota"', 0),
+  (23, 1, 2, 4, 18, ' Gelar kehormatan di Bidang akademis', 'Gelar', 15),
+  (23, 1, 3, 1, 1, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : Diploma II/III', 'Ijazah', 50),
+  (23, 1, 3, 1, 2, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : SLTA/D1', 'Ijazah', 25),
+  (23, 1, 3, 1, 3, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya lebih 960 jam', 'Sertifikat', 15),
+  (23, 1, 3, 1, 4, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 641 - 960 jam', 'Sertifikat', 9),
+  (23, 1, 3, 1, 5, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 401 - 640 jam', 'Sertifikat', 6),
+  (23, 1, 3, 1, 6, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 161 - 400 jam', 'Sertifikat', 3),
+  (23, 1, 3, 1, 7, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 81 - 160 jam', 'Sertifikat', 2),
+  (23, 1, 3, 1, 8, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 30 - 80 jam', 'Sertifikat', 1),
+  (23, 1, 3, 2, 1, 'Menyusun TOR rencana 5 tahunan tingkat Kabupaten/Kota ', 'TOR', 0.048),
+  (23, 1, 3, 2, 2, 'Mengumpulkan data dalam rangka menyusun rencana lima tahunan tingkat Propinsi', 'Laporan', 0.11),
+  (23, 1, 3, 2, 3, 'Mengolah data secara sederhana dalam rangka menyusun rencana lima tahunan tingkat Propinsi', 'Laporan', 0.068),
+  (23, 1, 3, 2, 4, 'Mengolah data lanjut dalam rangka menyusun rencana lima tahunan tingkat Kabupaten/Kota', 'Rancangan', 0.116),
+  (23, 1, 3, 2, 5, 'Menganalisis data sederhana dalam rangka menyusun rencana lima tahunan tingkat propinsi', 'Laporan', 0.48),
+  (23, 1, 3, 2, 6, 'Menyusun rancangan rencana lima tahunan tingkat Kabupaten/ Kota', 'Rancangan', 0.21),
+  (23, 1, 3, 2, 7, 'Menyempurnakan rancangan dalam rangka menyusun rencana lima tahunan tingkat Kabupaten/ Kota;', 'Rancangan', 0.2),
+  (23, 1, 3, 2, 8, 'Mengolah data secara sederhana dalam rangka menyusun  rencana tahunan tingkat Kabupaten/Kota;', 'Laporan', 0.076),
+  (23, 1, 3, 2, 9, 'Menganalisis data secara sederhana dalam rangka menyusun rencana tahunan tingkat Kecamatan/Puskesmas', 'Laporan', 0.064),
+  (23, 1, 3, 2, 10, 'Menyajikan rancangan rencana tahunan tingkat Kecamatan/ Puskesmas', 'Rancangan', 0.028),
+  (23, 1, 3, 2, 11, 'Menyusun rencana tiga bulanan tingkat Kecamatan/ Puskesmas', ' Rancangan', 0.128),
+  (23, 1, 3, 2, 12, 'Menyusun rencana bulanan tingkat Kecamatan/ Puskesmas', 'Rancangan', 0.132),
+  (23, 1, 3, 2, 13, 'Menyusun rencana operasional tingkat Kecamatan/ Puskesmas', 'Rancangan', 0.104),
+  (23, 1, 3, 2, 14, 'Menyiapkan data/literatur dalam rangka penyusunan petunjuk teknis/petunjuk pelaksanaan ', 'Juklak', 0.092),
+  (23, 1, 3, 2, 15, 'Menyusun data literatur dalam rangka menyusun pedoman;', 'Laporan', 0.068),
+  (23, 1, 3, 2, 16, 'Mengumpulkan data sekunder untuk pengamatan kesehatan lingkungan;', 'Laporan', 0.009),
+  (23, 1, 3, 2, 17, 'Melakukan pengolahan data secara manual untuk pengamatan kesehatan lingkungan;', 'Laporan', 0.036),
+  (23, 1, 3, 2, 18, 'Melakukan pemeriksaan secara sederhana pada objek kelompok II ', 'Laporan', 0.028),
+  (23, 1, 3, 2, 19, 'Mengambil sampel secara sederhana pada objek kelompok II;', 'Sampel', 0.024),
+  (23, 1, 3, 2, 20, 'Menentukan diagnosa dan treatment intervensi awal secara konvensional pada objek kelompok I ;', 'Rekomendasi', 0.016),
+  (23, 1, 3, 2, 21, 'Menentukan diagnosa dan treatment intervensi awal secara sederhana pada objek kelompok II;', 'Rekomendasi', 0.016),
+  (23, 1, 3, 2, 22, 'Konsultasi kesehatan lingkungan awal secara lokal pada objek kelompok I;', 'Laporan', 0.016),
+  (23, 1, 3, 2, 23, 'Membuat instrumen sederhana untuk identifikasi perilaku; ', 'Instrumen', 0.024),
+  (23, 1, 3, 2, 24, 'Membuat instrumen lanjut untuk identifikasi perilaku;', 'Instrumen', 0.08),
+  (23, 1, 3, 2, 25, 'Mengumpulkan data primer untuk identifikasi perilaku;', 'Laporan', 0.14),
+  (23, 1, 3, 2, 26, 'Mengumpulkan data sekunder untuk identifikasi perilaku;', 'Laporan', 0.04),
+  (23, 1, 3, 2, 27, 'Melakukan tabulasi dan pengumpulan data sedehana untuk menganalisa perilaku;', 'Laporan', 0.024),
+  (23, 1, 3, 2, 28, 'Menganalisa secara sederhana tentang perilaku;', 'Laporan', 0.032),
+  (23, 1, 3, 2, 29, 'Membuat perencanaan sederhana untuk pemberdayaan masyarakat;', 'Rencana', 0.008),
+  (23, 1, 3, 2, 30, 'Mengembangkan materi sederhana untuk pemberdayaan masyarakat;', 'Materi', 0.008),
+  (23, 1, 3, 2, 31, 'Mempersiapkan dan memelihara alat peraga;', 'Laporan', 0.016),
+  (23, 1, 3, 2, 32, 'Melakukan pemberdayaan individu secara umum;', 'Laporan', 0.008),
+  (23, 1, 3, 2, 33, 'Membuat laporan hasil pemberdayaan;', 'Laporan', 0.032),
+  (23, 1, 3, 2, 34, 'Melakukan pengumpulan data tentang masalah kesehatan dalam rangka menggerakkan kelompok potensial masyarakat;', 'Laporan', 0.112),
+  (23, 1, 3, 2, 35, 'Melakukan pertemuan lintas sektoral;', 'Laporan', 0.016),
+  (23, 1, 3, 2, 36, 'Mendapatkan calon kader untuk penggerakan masyarakat;', 'Laporan', 0.056),
+  (23, 1, 3, 3, 1, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam bentuk buku yang diterbitkan dan diedarkan secara nasional ', 'Karya', 12.5),
+  (23, 1, 3, 3, 2, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam majalah ilmiah yang diakui instansi berwenang (LIPI) ', 'Karya', 6),
+  (23, 1, 3, 3, 3, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Buku', 'Buku', 7),
+  (23, 1, 3, 3, 4, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Makalah', 'Makalah', 3.5),
+  (23, 1, 3, 3, 5, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Buku', 'Buku', 8),
+  (23, 1, 3, 3, 6, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Makalah', 'Makalah', 4),
+  (23, 1, 3, 3, 7, 'Tulisan ilmiah populer di bidang kesehatan lingkungan yang disebarluaskan melalui media massa', 'Karya', 2),
+  (23, 1, 3, 3, 8, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Buku yang diterbitkan atau diedarkan  secara nasional', 'Buku', 7),
+  (23, 1, 3, 3, 9, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Majalah ilmiah yang diakui oleh instansi yang berwenang (LIPI)', 'Naskah', 3.5),
+  (23, 1, 3, 3, 10, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Buku', 'Buku', 3),
+  (23, 1, 3, 3, 11, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Makalah', 'Makalah', 1.5),
+  (23, 1, 3, 3, 12, 'Membuat abstrak tulisan ilmiah yang dimuat  dalam penerbitan', 'Makalah', 1.5),
+  (23, 1, 3, 3, 13, 'Membimbing sanitarian yang berada di bawah jenjang jabatan', 'Bimbingan ', 0.02),
+  (23, 1, 3, 3, 14, '"Membuat buku pedoman petunjuk pelaksanaan ', ' petunjuk tehnis di bidang kesehatan lingkungan"', 0),
+  (23, 1, 3, 3, 15, 'mengembangkan tehnologi tepat guna di bidang kesehatan lingkungan', 'Kali', 5),
+  (23, 1, 3, 4, 1, 'mengajar melatih pada pendidikan dan pelatihan pegawai', '2 Jam Pelajaran ', 0.04),
+  (23, 1, 3, 4, 2, 'Mengikuti Seminar lokakarya internasional  sebagai : Pemasaran', 'Kali', 3),
+  (23, 1, 3, 4, 3, '"Mengikuti Seminar lokakarya internasional  sebagai : pembahasan moderator', ' narasumber"', 0),
+  (23, 1, 3, 4, 4, 'Mengikuti Seminar lokakarya internasional  sebagai : Peserta', 'Kali', 1),
+  (23, 1, 3, 4, 5, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai ketua"', 0),
+  (23, 1, 3, 4, 6, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai anggota"', 0),
+  (23, 1, 3, 4, 7, 'Tingkat Internasional/ Nasional sebagai : Pengurus aktif', 'Tahun', 1),
+  (23, 1, 3, 4, 8, 'Tingkat Internasional/ Nasional sebagai : Sebagai anggota', 'Tahun', 0.75),
+  (23, 1, 3, 4, 9, 'Tingkat Propinsi : Pengurus Aktif', 'Tahun', 0.5),
+  (23, 1, 3, 4, 10, 'Tingkat Propinsi : Anggota Aktif', 'Tahun', 0.35),
+  (23, 1, 3, 4, 11, 'Menjadi anggota aktif tim penilai', 'Tahun', 0.5),
+  (23, 1, 3, 4, 12, '"Ikut serta dalam kegiatan organisasi sosial (LKMD', ' Pramuka', 0),
+  (23, 1, 3, 4, 13, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Diploma IV', 'Ijazah/ gelar', 5),
+  (23, 1, 3, 4, 14, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Muda/ Diploma II/ Diploma I', 'Ijazah/ gelar', 3),
+  (23, 1, 3, 4, 15, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Nasional', 0),
+  (23, 1, 3, 4, 16, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Propinsi"', 0),
+  (23, 1, 3, 4, 17, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Kabupaten/ Kota"', 0),
+  (23, 1, 3, 4, 18, ' Gelar kehormatan di Bidang akademis', 'Gelar', 15),
+  (23, 2, 6, 1, 1, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : Diploma II/III', 'Ijazah', 50),
+  (23, 2, 6, 1, 2, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : SLTA/D1', 'Ijazah', 25),
+  (23, 2, 6, 1, 3, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya lebih 960 jam', 'Sertifikat', 15),
+  (23, 2, 6, 1, 4, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 641 - 960 jam', 'Sertifikat', 9),
+  (23, 2, 6, 1, 5, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 401 - 640 jam', 'Sertifikat', 6),
+  (23, 2, 6, 1, 6, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 161 - 400 jam', 'Sertifikat', 3),
+  (23, 2, 6, 1, 7, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 81 - 160 jam', 'Sertifikat', 2),
+  (23, 2, 6, 1, 8, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 30 - 80 jam', 'Sertifikat', 1),
+  (23, 2, 6, 2, 1, 'Menganalisis data lanjut  rencana 5 tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.78),
+  (23, 2, 6, 2, 2, 'Menyempurnakan rancangan rencana 5 tahunan tingkat Propinsi dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 1.59),
+  (23, 2, 6, 2, 3, 'Menyempurnakan rancangan rencana 5 tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 1.62),
+  (23, 2, 6, 2, 4, 'Menganalisa data Lanjut  rencana tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.48),
+  (23, 2, 6, 2, 5, 'Menyusun rancangan rencana tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.6),
+  (23, 2, 6, 2, 6, 'Menyempurnakan rancangan rencana tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.6),
+  (23, 2, 6, 2, 7, 'Menyempurnakan rancangan penyusunan petunjuk pelaksanaan / petunjuk teknis dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 1.56),
+  (23, 2, 6, 2, 8, 'Menyempurnakan rancangan peraturan  dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 2.16),
+  (23, 2, 6, 2, 9, 'Menyempurnakan rancangan standar dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 2.16),
+  (23, 2, 6, 2, 10, 'Menyempurnakan rancangan pedoman dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.2),
+  (23, 2, 6, 2, 11, 'Menyusun desain studi kelayakan dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 1.2),
+  (23, 2, 6, 2, 12, 'Menyempurnakan desain studi kelayakan dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.42),
+  (23, 2, 6, 2, 13, 'Menyusun laporan studi kelayakan dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.48),
+  (23, 2, 6, 2, 14, 'Melakukan pengamatan kesehatan lingkungan Persiapan pengumpulan data Menyusun / menetapkan metode pengumpulan data Sekunder', 'Metode', 0.05),
+  (23, 2, 6, 2, 15, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok I  Lanjut Konvensional', 'Rekomendasi', 0.6),
+  (23, 2, 6, 2, 16, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok I Konsultasi kesehatan lingkungan obyek kelompok I Lanjut Regional', 'Rancangan', 0.15),
+  (23, 2, 6, 2, 17, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok I Konsultasi kesehatan lingkungan obyek kelompok II Lanjut Regional', 'Rancangan', 0.8),
+  (23, 2, 6, 2, 18, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara garis besar 49 - 58 jam', 'Laporan', 1.58),
+  (23, 2, 6, 2, 19, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara garis besar 59 - 68 jam', 'Laporan', 1.9),
+  (23, 2, 6, 2, 20, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara garis besar 69 - 78 jam', 'Laporan', 2.2),
+  (23, 2, 6, 2, 21, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara detail  56 - 74 jam', 'Laporan', 1.95),
+  (23, 2, 6, 2, 22, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara detail 75 - 93 jam', 'Laporan', 2.52),
+  (23, 2, 6, 2, 23, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara detail 94 - 112 jam', 'Laporan', 3.09),
+  (23, 2, 6, 2, 24, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai rencana pengelolaan / pemantauan lingkungan 49 - 58 jam', 'Laporan', 1.58),
+  (23, 2, 6, 2, 25, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai rencana pengelolaan / pemantauan lingkungan 59 - 68 jam', 'Laporan', 1.9),
+  (23, 2, 6, 2, 26, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai rencana pengelolaan / pemantauan lingkungan 69 - 78 jam', 'Laporan', 2.2),
+  (23, 2, 6, 2, 27, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian HACCP 49 - 58 jam', 'Laporan', 1.58),
+  (23, 2, 6, 2, 28, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian HACCP 59 - 68 jam', 'Laporan', 1.9),
+  (23, 2, 6, 2, 29, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian HACCP 69 - 78 jam', 'Laporan', 2.2),
+  (23, 2, 6, 2, 30, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian analisis kesehatan lingkungan lainnya 49 - 58 jam', 'Laporan', 1.58),
+  (23, 2, 6, 2, 31, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian analisis kesehatan lingkungan lainnya 59 - 68 jam', 'Laporan', 1.9),
+  (23, 2, 6, 2, 32, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian analisis kesehatan lingkungan lainnya 69 - 78 jam', 'Laporan', 2.2),
+  (23, 2, 6, 2, 33, 'Melakukan pemberdayaan melalui media massa', 'Laporan', 0.06),
+  (23, 2, 6, 3, 1, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam bentuk buku yang diterbitkan dan diedarkan secara nasional ', 'Karya', 12.5),
+  (23, 2, 6, 3, 2, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam majalah ilmiah yang diakui instansi berwenang (LIPI) ', 'Karya', 6),
+  (23, 2, 6, 3, 3, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Buku', 'Buku', 7),
+  (23, 2, 6, 3, 4, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Makalah', 'Makalah', 3.5),
+  (23, 2, 6, 3, 5, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Buku', 'Buku', 8),
+  (23, 2, 6, 3, 6, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Makalah', 'Makalah', 4),
+  (23, 2, 6, 3, 7, 'Tulisan ilmiah populer di bidang kesehatan lingkungan yang disebarluaskan melalui media massa', 'Karya', 2),
+  (23, 2, 6, 3, 8, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Buku yang diterbitkan atau diedarkan  secara nasional', 'Buku', 7),
+  (23, 2, 6, 3, 9, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Majalah ilmiah yang diakui oleh instansi yang berwenang (LIPI)', 'Naskah', 3.5),
+  (23, 2, 6, 3, 10, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Buku', 'Buku', 3),
+  (23, 2, 6, 3, 11, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Makalah', 'Makalah', 1.5),
+  (23, 2, 6, 3, 12, 'Membuat abstrak tulisan ilmiah yang dimuat  dalam penerbitan', 'Makalah', 1.5),
+  (23, 2, 6, 3, 13, 'Membimbing sanitarian yang berada di bawah jenjang jabatan', 'Bimbingan ', 0.02),
+  (23, 2, 6, 3, 14, '"Membuat buku pedoman petunjuk pelaksanaan ', ' petunjuk tehnis di bidang kesehatan lingkungan"', 0),
+  (23, 2, 6, 3, 15, 'mengembangkan tehnologi tepat guna di bidang kesehatan lingkungan', 'Kali', 5),
+  (23, 2, 6, 4, 1, 'mengajar melatih pada pendidikan dan pelatihan pegawai', '2 Jam Pelajaran ', 0.04),
+  (23, 2, 6, 4, 2, 'Mengikuti Seminar lokakarya internasional  sebagai : Pemasaran', 'Kali', 3),
+  (23, 2, 6, 4, 3, '"Mengikuti Seminar lokakarya internasional  sebagai : pembahasan moderator', ' narasumber"', 0),
+  (23, 2, 6, 4, 4, 'Mengikuti Seminar lokakarya internasional  sebagai : Peserta', 'Kali', 1),
+  (23, 2, 6, 4, 5, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai ketua"', 0),
+  (23, 2, 6, 4, 6, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai anggota"', 0),
+  (23, 2, 6, 4, 7, 'Tingkat Internasional/ Nasional sebagai : Pengurus aktif', 'Tahun', 1),
+  (23, 2, 6, 4, 8, 'Tingkat Internasional/ Nasional sebagai : Sebagai anggota', 'Tahun', 0.75),
+  (23, 2, 6, 4, 9, 'Tingkat Propinsi : Pengurus Aktif', 'Tahun', 0.5),
+  (23, 2, 6, 4, 10, 'Tingkat Propinsi : Anggota Aktif', 'Tahun', 0.35),
+  (23, 2, 6, 4, 11, 'Menjadi anggota aktif tim penilai', 'Tahun', 0.5),
+  (23, 2, 6, 4, 12, '"Ikut serta dalam kegiatan organisasi sosial (LKMD', ' Pramuka', 0),
+  (23, 2, 6, 4, 13, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Diploma IV', 'Ijazah/ gelar', 5),
+  (23, 2, 6, 4, 14, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Muda/ Diploma II/ Diploma I', 'Ijazah/ gelar', 3),
+  (23, 2, 6, 4, 15, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Nasional', 0),
+  (23, 2, 6, 4, 16, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Propinsi"', 0),
+  (23, 2, 6, 4, 17, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Kabupaten/ Kota"', 0),
+  (23, 2, 6, 4, 18, ' Gelar kehormatan di Bidang akademis', 'Gelar', 15),
+  (23, 2, 7, 1, 1, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : Diploma II/III', 'Ijazah', 50),
+  (23, 2, 7, 1, 2, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : SLTA/D1', 'Ijazah', 25),
+  (23, 2, 7, 1, 3, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya lebih 960 jam', 'Sertifikat', 15),
+  (23, 2, 7, 1, 4, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 641 - 960 jam', 'Sertifikat', 9),
+  (23, 2, 7, 1, 5, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 401 - 640 jam', 'Sertifikat', 6),
+  (23, 2, 7, 1, 6, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 161 - 400 jam', 'Sertifikat', 3),
+  (23, 2, 7, 1, 7, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 81 - 160 jam', 'Sertifikat', 2),
+  (23, 2, 7, 1, 8, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 30 - 80 jam', 'Sertifikat', 1),
+  (23, 2, 7, 2, 1, 'Menyusun TOR rencana 5 tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'TOR', 0.28),
+  (23, 2, 7, 2, 2, 'Mengolah data lanjut rencana 5 tahunan tingkat pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.52),
+  (23, 2, 7, 2, 3, 'Menganalisis data lanjut rencana 5 tahunan tingkat Propinsi dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.52),
+  (23, 2, 7, 2, 4, 'Menyusun TOR rencana tahunan tingkat pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.2),
+  (23, 2, 7, 2, 5, 'Mengolah data Sederhana rencana tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.38),
+  (23, 2, 7, 2, 6, 'Menganalisa data Lanjut rencana tahunan tingkat Propinsi dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.2),
+  (23, 2, 7, 2, 7, 'Menyusun rancangan rencana tahunan tingkat Propinsi dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.4),
+  (23, 2, 7, 2, 8, 'Menyajikan rancangan rencana tahunan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.1),
+  (23, 2, 7, 2, 9, 'Menyempurnakan rancangan rencana tahunan tingkat Propinsi dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.4),
+  (23, 2, 7, 2, 10, 'Menyusun rencana 3 bulanan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.68),
+  (23, 2, 7, 2, 11, 'Menyusun rencana bulanan tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.64),
+  (23, 2, 7, 2, 12, 'Menyusun rencana operasional tingkat Pusat dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.052),
+  (23, 2, 7, 2, 13, 'Menyajikan rancangan penyusunan petunjuk pelaksanaan / petunjuk teknis dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Laporan', 0.24),
+  (23, 2, 7, 2, 14, 'Menyajikan rancangan peraturan dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 1.06),
+  (23, 2, 7, 2, 15, 'Menyusun rancangan standar dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 1.16),
+  (23, 2, 7, 2, 16, 'Menyajikan rancangan pedoman dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Rancangan', 0.6),
+  (23, 2, 7, 2, 17, 'Menyusun TOR studi kelayakan dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'TOR', 0.72),
+  (23, 2, 7, 2, 18, 'Menyusun / menetapkan metode pengumpulan data Primer ', 'Metode', 0.04),
+  (23, 2, 7, 2, 19, 'Menyusun instrumen pengumpulan data Sekunder dalam rangka mempersiapkan pelaksanaan kegiatan kesehatan lingkungan', 'Instrumen', 0.01),
+  (23, 2, 7, 2, 20, 'Melakukan kajian data secara Analitik (lanjut) dalam rangka melakukan pengamatan kesehatan lingkungan ', 'Laporan', 0.14),
+  (23, 2, 7, 2, 21, 'Menyusun laporan penyajian dan penyebarluasan data dalam rangka melakukan pengamatan kesehatan lingkungan', 'Laporan', 0.34),
+  (23, 2, 7, 2, 22, 'Melakukan penyajian dan penyebarluasan data Penyajian dalam rangka melakukan pengamatan kesehatan lingkungan', 'Makalah', 0.12),
+  (23, 2, 7, 2, 23, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Lanjut Sederhana', 'Rekomendasi', 0.07),
+  (23, 2, 7, 2, 24, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Konsultasi kesehatan lingkungan obyek kelompok I Lanjut Regional', 'Rancangan', 0.1),
+  (23, 2, 7, 2, 25, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Konsultasi kesehatan lingkungan obyek kelompok II Lanjut Regional', 'Rancangan', 0.2),
+  (23, 2, 7, 2, 26, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Melakukan kunjungan / bimtek ke obyek kelompok II Regional', 'Laporan', 0.16),
+  (23, 2, 7, 2, 27, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara garis besar 19 - 28 jam', 'Laporan', 0.47),
+  (23, 2, 7, 2, 28, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara garis besar 29 - 38 jam', 'Laporan', 0.67),
+  (23, 2, 7, 2, 29, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara garis besar 39 - 48 jam', 'Laporan', 0.87),
+  (23, 2, 7, 2, 30, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara detail < 18 Jam', 'Laporan', 0.2),
+  (23, 2, 7, 2, 31, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara detail 18 - 36 jam', 'Laporan', 0.5),
+  (23, 2, 7, 2, 32, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai study dampak kesehatan lingkungan secara detail 37 - 55 jam', 'Laporan', 0.92),
+  (23, 2, 7, 2, 33, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai rencana pengelolaan / pemantauan lingkungan 19 - 28 jam', 'Laporan', 0.47),
+  (23, 2, 7, 2, 34, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai rencana pengelolaan / pemantauan lingkungan < 29 - 38 jam', 'Laporan', 0.67),
+  (23, 2, 7, 2, 35, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai rencana pengelolaan / pemantauan lingkungan < 39 - 48 jam', 'Laporan', 0.87),
+  (23, 2, 7, 2, 36, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian HACCP 19 - 28 jam', 'Laporan', 0.47),
+  (23, 2, 7, 2, 37, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian HACCP 29 - 38 jam', 'Laporan', 0.67),
+  (23, 2, 7, 2, 38, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian HACCP 39 - 48 jam', 'Laporan', 0.87),
+  (23, 2, 7, 2, 39, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian analisis kesehatan lingkungan lainnya 19 - 28 jam', 'Laporan', 0.47),
+  (23, 2, 7, 2, 40, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian analisis kesehatan lingkungan lainnya 29 - 38 jam', 'Laporan', 0.67),
+  (23, 2, 7, 2, 41, 'Tidak lanjut pengawasan kesehatan lingkungan Menentukan diagnosa dan treatment intervensi obyek kelompok II Menilai penyajian analisis kesehatan lingkungan lainnya 39 - 48 jam', 'Laporan', 0.87),
+  (23, 2, 7, 3, 1, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam bentuk buku yang diterbitkan dan diedarkan secara nasional ', 'Karya', 12.5),
+  (23, 2, 7, 3, 2, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam majalah ilmiah yang diakui instansi berwenang (LIPI) ', 'Karya', 6),
+  (23, 2, 7, 3, 3, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Buku', 'Buku', 7),
+  (23, 2, 7, 3, 4, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Makalah', 'Makalah', 3.5),
+  (23, 2, 7, 3, 5, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Buku', 'Buku', 8),
+  (23, 2, 7, 3, 6, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Makalah', 'Makalah', 4),
+  (23, 2, 7, 3, 7, 'Tulisan ilmiah populer di bidang kesehatan lingkungan yang disebarluaskan melalui media massa', 'Karya', 2),
+  (23, 2, 7, 3, 8, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Buku yang diterbitkan atau diedarkan  secara nasional', 'Buku', 7),
+  (23, 2, 7, 3, 9, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Majalah ilmiah yang diakui oleh instansi yang berwenang (LIPI)', 'Naskah', 3.5),
+  (23, 2, 7, 3, 10, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Buku', 'Buku', 3),
+  (23, 2, 7, 3, 11, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Makalah', 'Makalah', 1.5),
+  (23, 2, 7, 3, 12, 'Membuat abstrak tulisan ilmiah yang dimuat  dalam penerbitan', 'Makalah', 1.5),
+  (23, 2, 7, 3, 13, 'Membimbing sanitarian yang berada di bawah jenjang jabatan', 'Bimbingan ', 0.02),
+  (23, 2, 7, 3, 14, '"Membuat buku pedoman petunjuk pelaksanaan ', ' petunjuk tehnis di bidang kesehatan lingkungan"', 0),
+  (23, 2, 7, 3, 15, 'mengembangkan tehnologi tepat guna di bidang kesehatan lingkungan', 'Kali', 5),
+  (23, 2, 7, 4, 1, 'mengajar melatih pada pendidikan dan pelatihan pegawai', '2 Jam Pelajaran ', 0.04),
+  (23, 2, 7, 4, 2, 'Mengikuti Seminar lokakarya internasional  sebagai : Pemasaran', 'Kali', 3),
+  (23, 2, 7, 4, 3, '"Mengikuti Seminar lokakarya internasional  sebagai : pembahasan moderator', ' narasumber"', 0),
+  (23, 2, 7, 4, 4, 'Mengikuti Seminar lokakarya internasional  sebagai : Peserta', 'Kali', 1),
+  (23, 2, 7, 4, 5, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai ketua"', 0),
+  (23, 2, 7, 4, 6, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai anggota"', 0),
+  (23, 2, 7, 4, 7, 'Tingkat Internasional/ Nasional sebagai : Pengurus aktif', 'Tahun', 1),
+  (23, 2, 7, 4, 8, 'Tingkat Internasional/ Nasional sebagai : Sebagai anggota', 'Tahun', 0.75),
+  (23, 2, 7, 4, 9, 'Tingkat Propinsi : Pengurus Aktif', 'Tahun', 0.5),
+  (23, 2, 7, 4, 10, 'Tingkat Propinsi : Anggota Aktif', 'Tahun', 0.35),
+  (23, 2, 7, 4, 11, 'Menjadi anggota aktif tim penilai', 'Tahun', 0.5),
+  (23, 2, 7, 4, 12, '"Ikut serta dalam kegiatan organisasi sosial (LKMD', ' Pramuka', 0),
+  (23, 2, 7, 4, 13, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Diploma IV', 'Ijazah/ gelar', 5),
+  (23, 2, 7, 4, 14, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Muda/ Diploma II/ Diploma I', 'Ijazah/ gelar', 3),
+  (23, 2, 7, 4, 15, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Nasional', 0),
+  (23, 2, 7, 4, 16, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Propinsi"', 0),
+  (23, 2, 7, 4, 17, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Kabupaten/ Kota"', 0),
+  (23, 2, 7, 4, 18, 'Gelar kehormatan di bidang akademis', 'Gelar', 15),
+  (23, 2, 8, 1, 1, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : Diploma II/III', 'Ijazah', 50),
+  (23, 2, 8, 1, 2, 'Mengikuti pendidikan sekolah dan mendapat ijazah/ gelar : SLTA/D1', 'Ijazah', 25),
+  (23, 2, 8, 1, 3, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya lebih 960 jam', 'Sertifikat', 15),
+  (23, 2, 8, 1, 4, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 641 - 960 jam', 'Sertifikat', 9),
+  (23, 2, 8, 1, 5, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 401 - 640 jam', 'Sertifikat', 6),
+  (23, 2, 8, 1, 6, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 161 - 400 jam', 'Sertifikat', 3),
+  (23, 2, 8, 1, 7, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 81 - 160 jam', 'Sertifikat', 2),
+  (23, 2, 8, 1, 8, 'Mengikuti pendidikan dan pelatihan fungsional di bidang kesehatan lingkungan dan mendapat Surat Tanda Tamat Pendidikan dan Latihan (STTPL) atau Sertifikat : lamanya antara 30 - 80 jam', 'Sertifikat', 1),
+  (23, 2, 8, 2, 1, 'Menyusun TOR  rencana 5 tahunan  tingkat Kabupaten / Kota', 'TOR', 0.015),
+  (23, 2, 8, 2, 2, 'Menganalisis data sederhana tingkat pusat', 'Laporan', 0.24),
+  (23, 2, 8, 2, 3, 'Menyusun rancangan rencana 5 tahunan tingkat pusat', 'Rancangan', 0.52),
+  (23, 2, 8, 2, 4, 'Menyajikan rancangan rencana 5 tahunan tingkat pusat', 'Rancangan', 0.09),
+  (23, 2, 8, 2, 5, 'Mengolah data Sederhana tingkat Propinsi dalam rangka menyusun rencana tahunan', 'Rancangan', 0.19),
+  (23, 2, 8, 2, 6, 'Mengolah data Lanjut tingkat Pusat dalam rangka menyusun rencana tahunan', 'Laporan', 0.19),
+  (23, 2, 8, 2, 7, 'Menganalisa data sederhana tingkat pusat', 'Laporan', 0.21),
+  (23, 2, 8, 2, 8, 'Menyajikan rancangan tingkat Propinsi', 'Rancangan', 0.05),
+  (23, 2, 8, 2, 9, 'Menyusun rencana 3 bulanan tingkat Propinsi', 'Rancangan', 0.34),
+  (23, 2, 8, 2, 10, 'Menyusun rencana bulanan tingkat Propinsi', 'Rancangan', 0.32),
+  (23, 2, 8, 2, 11, 'Menyusun rencana operasional tingkat Propinsi', 'Rancangan', 0.26),
+  (23, 2, 8, 2, 12, 'Menyusun rancangan peraturan', 'Rancangan', 0.17),
+  (23, 2, 8, 2, 13, 'Menyusun rancangan perdoman', 'Rancangan', 0.8),
+  (23, 2, 8, 2, 14, 'Melaksanakan uji coba desain studi kelayakan', 'Laporan', 0.3),
+  (23, 2, 8, 2, 15, 'Menyusun intrumen pengumpulan data primer', 'Instrumen', 0.04),
+  (23, 2, 8, 2, 16, 'Melakukan kajian data secara Diskriptif (sederhana)', 'Laporan', 0.06),
+  (23, 2, 8, 2, 17, 'Melakukan penyebarluasan data pengamatan kesehatan lingkungan', 'Makalah', 0.08),
+  (23, 2, 8, 2, 18, 'Melakukan konsultasi kesehatan lingkungan obyek kelompok I Lanjut Lokal', 'Rancangan', 0.04),
+  (23, 2, 8, 2, 19, 'Melakukan konsultasi kesehatan lingkungan obyek kelompok II Awal Nasional', 'Rancangan', 0.05),
+  (23, 2, 8, 2, 20, 'Melakukan konsultasi kesehatan lingkungan obyek kelompok II Lanjut Lokal', 'Rancangan', 0.5),
+  (23, 2, 8, 2, 21, 'Menilai study dampak kesehatan lingkungan secara garis besar < 9 jam', 'Laporan', 0.045),
+  (23, 2, 8, 2, 22, 'Menilai study dampak kesehatan lingkungan secara garis besar 9 - 18 jam', 'Laporan', 0.135),
+  (23, 2, 8, 2, 23, 'Menilai rencana pengelolaan/ pemantauan lingkungan < 9 jam', 'Laporan', 0.045),
+  (23, 2, 8, 2, 24, 'Menilai rencana pengelolaan/ pemantauan lingkungan < 9 - 18 jam', 'Laporan', 0.135),
+  (23, 2, 8, 2, 25, 'Menilai penyajian HACCP < 9 jam', 'Laporan', 0.045),
+  (23, 2, 8, 2, 26, 'Menilai penyajian HACCP 9 - 18 jam', 'Laporan', 0.135),
+  (23, 2, 8, 2, 27, 'Menilai penyajian analisis kesehatan lingkungan lainnya < 9 jam', 'Laporan', 0.045),
+  (23, 2, 8, 2, 28, 'Menilai penyajian analisis kesehatan lingkungan lainnya 9 - 18 jam', 'Laporan', 0.135),
+  (23, 2, 8, 2, 29, 'Persiapan kegiatan menentukan program untuk identifikasi perilaku', 'Laporan', 0.18),
+  (23, 2, 8, 3, 0, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Makalah', 'Makalah', 1.5),
+  (23, 2, 8, 3, 1, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam bentuk buku yang diterbitkan dan diedarkan secara nasional ', 'Karya', 12.5),
+  (23, 2, 8, 3, 2, 'Karya ilmiah hasil penelitian bidang kesehatan yang dipublikasikan: Dalam majalah ilmiah yang diakui instansi berwenang (LIPI) ', 'Karya', 6),
+  (23, 2, 8, 3, 3, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Buku', 'Buku', 7),
+  (23, 2, 8, 3, 4, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang tidak dipublikasikan tetapi didokumentasikan pada perpustakaan bentuk : Makalah', 'Makalah', 3.5),
+  (23, 2, 8, 3, 5, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Buku', 'Buku', 8),
+  (23, 2, 8, 3, 6, 'Karya tulis berupa tinjauan atau ulasan ilmiah dengan gagasan sendiri dalam bidang kesehatan yang dipublikasikan bentuk : Makalah', 'Makalah', 4),
+  (23, 2, 8, 3, 7, 'Tulisan ilmiah populer di bidang kesehatan lingkungan yang disebarluaskan melalui media massa', 'Karya', 2),
+  (23, 2, 8, 3, 8, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Buku yang diterbitkan atau diedarkan  secara nasional', 'Buku', 7),
+  (23, 2, 8, 3, 9, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang dipublikasikan dalam bentuk : Majalah ilmiah yang diakui oleh instansi yang berwenang (LIPI)', 'Naskah', 3.5),
+  (23, 2, 8, 3, 10, 'Terjemahan/saduran di bidang kesehatan lingkungan  yang tidak dipublikasikan dalam bentuk : Buku', 'Buku', 3),
+  (23, 2, 8, 3, 11, 'Membuat abstrak tulisan ilmiah yang dimuat  dalam penerbitan', 'Makalah', 1.5),
+  (23, 2, 8, 3, 12, 'Membimbing sanitarian yang berada di bawah jenjang jabatan', 'Bimbingan ', 0.02),
+  (23, 2, 8, 3, 13, '"Membuat buku pedoman petunjuk pelaksanaan ', ' petunjuk tehnis di bidang kesehatan lingkungan"', 0),
+  (23, 2, 8, 3, 14, 'mengembangkan tehnologi tepat guna di bidang kesehatan lingkungan', 'Kali', 5),
+  (23, 2, 8, 4, 1, 'mengajar melatih pada pendidikan dan pelatihan pegawai', '2 Jam Pelajaran ', 0.04),
+  (23, 2, 8, 4, 2, 'Mengikuti Seminar lokakarya internasional  sebagai : Pemasaran', 'Kali', 3),
+  (23, 2, 8, 4, 3, '"Mengikuti Seminar lokakarya internasional  sebagai : pembahasan moderator', ' narasumber"', 0),
+  (23, 2, 8, 4, 4, 'Mengikuti Seminar lokakarya internasional  sebagai : Peserta', 'Kali', 1),
+  (23, 2, 8, 4, 5, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai ketua"', 0),
+  (23, 2, 8, 4, 6, '"Mengikuti', ' berperan serta sebagai delegasi ilmiah : Sebagai anggota"', 0),
+  (23, 2, 8, 4, 7, 'Tingkat Internasional/ Nasional sebagai : Pengurus aktif', 'Tahun', 1),
+  (23, 2, 8, 4, 8, 'Tingkat Internasional/ Nasional sebagai : Sebagai anggota', 'Tahun', 0.75),
+  (23, 2, 8, 4, 9, 'Tingkat Propinsi : Pengurus Aktif', 'Tahun', 0.5),
+  (23, 2, 8, 4, 10, 'Tingkat Propinsi : Anggota Aktif', 'Tahun', 0.35),
+  (23, 2, 8, 4, 11, 'Menjadi anggota aktif tim penilai', 'Tahun', 0.5),
+  (23, 2, 8, 4, 12, '"Ikut serta dalam kegiatan organisasi sosial (LKMD', ' Pramuka', 0),
+  (23, 2, 8, 4, 13, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Diploma IV', 'Ijazah/ gelar', 5),
+  (23, 2, 8, 4, 14, 'Memperoleh ijazah/ gelar yang tidak sesuai dalam bidang tugasnya :Sarjana Muda/ Diploma II/ Diploma I', 'Ijazah/ gelar', 3),
+  (23, 2, 8, 4, 15, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Nasional', 0),
+  (23, 2, 8, 4, 16, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Propinsi"', 0),
+  (23, 2, 8, 4, 17, '"Tanda jasa penghargaan dari pemerintah atas prestasi kerjanya', ' tingkat : Kabupaten/ Kota"', 0),
+  (23, 2, 8, 4, 18, ' Gelar kehormatan di Bidang akademis', 'Gelar', 15);
+/*!40000 ALTER TABLE `ref_butir_kegiatan` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_butir_kegiatan_unsur
+CREATE TABLE IF NOT EXISTS `ref_butir_kegiatan_unsur` (
+  `id_unsur` int(11) NOT NULL,
+  `id_jabatan` int(11) NOT NULL,
+  `unsur` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_unsur`,`id_jabatan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_butir_kegiatan_unsur: ~4 rows (approximately)
+/*!40000 ALTER TABLE `ref_butir_kegiatan_unsur` DISABLE KEYS */;
+INSERT INTO `ref_butir_kegiatan_unsur` (`id_unsur`, `id_jabatan`, `unsur`) VALUES
+  (1, 23, 'Pendidikan'),
+  (2, 23, 'Kegiatan Penyehatan Lingkungan'),
+  (3, 23, 'Pengembangan Profesi'),
+  (4, 23, 'Kegiatan Penunjang Tugas Sanitarian');
+/*!40000 ALTER TABLE `ref_butir_kegiatan_unsur` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_golru
+CREATE TABLE IF NOT EXISTS `ref_golru` (
+  `id_golru` int(11) NOT NULL,
+  `golru` varchar(10) NOT NULL,
+  `golru2` varchar(10) NOT NULL,
+  `golru3` varchar(10) NOT NULL,
+  `golru_bkn` varchar(10) NOT NULL,
+  `golru_taspen` varchar(10) NOT NULL,
+  `golongan` varchar(10) NOT NULL,
+  `ruang` varchar(10) NOT NULL,
+  `pangkat` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_golru`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_golru: ~17 rows (approximately)
+/*!40000 ALTER TABLE `ref_golru` DISABLE KEYS */;
+INSERT INTO `ref_golru` (`id_golru`, `golru`, `golru2`, `golru3`, `golru_bkn`, `golru_taspen`, `golongan`, `ruang`, `pangkat`) VALUES
+  (1, 'I / A', 'I/a', 'I/a', '11', '1a', 'I', 'A', 'Juru Muda'),
+  (2, 'I / B', 'I/b', 'I/b', '12', '1b', 'I', 'B', 'Juru Muda Tingkat I'),
+  (3, 'I / C', 'I/c', 'I/c', '13', '1c', 'I', 'C', 'Juru'),
+  (4, 'I / D', 'I/d', 'I/d', '14', '1d', 'I', 'D', 'Juru Tingkat I'),
+  (5, 'II / A', 'II/a', 'II/a', '21', '2a', 'II', 'A', 'Pengatur Muda'),
+  (6, 'II / B', 'II/b', 'II/b', '22', '2b', 'II', 'B', 'Pengatur Muda Tingkat I'),
+  (7, 'II / C', 'II/c', 'II/c', '23', '2c', 'II', 'C', 'Pengatur'),
+  (8, 'II / D', 'II/d', 'II/d', '24', '2d', 'II', 'D', 'Pengatur Tingkat I'),
+  (9, 'III / A', 'III/a', 'III/a', '31', '3a', 'III', 'A', 'Penata Muda'),
+  (10, 'III / B', 'III/b', 'III/b', '32', '3b', 'III', 'B', 'Penata Muda Tingkat I'),
+  (11, 'III / C', 'III/c', 'III/c', '33', '3c', 'III', 'C', 'Penata'),
+  (12, 'III / D', 'III/d', 'III/d', '34', '3d', 'III', 'D', 'Penata Tingkat I'),
+  (13, 'IV / A', 'IV/a', 'IV/a', '41', '4a', 'IV', 'A', 'Pembina'),
+  (14, 'IV / B', 'IV/b', 'IV/b', '42', '4b', 'IV', 'B', 'Pembina Tingkat I'),
+  (15, 'IV / C', 'IV/c', 'IV/c', '43', '4c', 'IV', 'C', 'Pembina Utama Muda'),
+  (16, 'IV / D', 'IV/d', 'IV/d', '44', '4d', 'IV', 'D', 'Pembina Utama Madya'),
+  (17, 'IV / E', 'IV/e', 'IV/e', '45', '4e', 'IV', 'E', 'Pembina Utama');
+/*!40000 ALTER TABLE `ref_golru` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_jabfung
+CREATE TABLE IF NOT EXISTS `ref_jabfung` (
+  `id` int(11) NOT NULL,
+  `nama_jabatan` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_jabfung: ~29 rows (approximately)
+/*!40000 ALTER TABLE `ref_jabfung` DISABLE KEYS */;
+INSERT INTO `ref_jabfung` (`id`, `nama_jabatan`) VALUES
+  (1, 'ADMINISTRASI KESEHATAN'),
+  (2, 'ASISTEN APOTEKER'),
+  (3, 'APOTEKER'),
+  (4, 'BIDAN'),
+  (5, 'DOKTER'),
+  (6, 'DOKTER GIGI'),
+  (7, 'DOKTER PENDIDIK KLINIS'),
+  (8, 'ENTOMOLOG KESEHATAN'),
+  (9, 'EPIDEMIOLOG KESEHATAN'),
+  (10, 'FISIKAWAN MEDIS'),
+  (11, 'FISIOTERAPI'),
+  (12, 'NUTRISIONIS'),
+  (13, 'OKUPASI TERAPIS'),
+  (14, 'ORTOTIS PROSTETIS'),
+  (15, 'PENYULUH KESEHATAN MASYARAKAT'),
+  (16, 'PERAWAT'),
+  (17, 'PERAWAT GIGI'),
+  (18, 'PEREKAM MEDIS'),
+  (19, 'PRANATA LABORATORIUM KESEHATAN'),
+  (20, 'PSIKOLOGIS KLINIS'),
+  (21, 'RADIOGRAFER'),
+  (22, 'REFRAKSIONIS OPTISIEN'),
+  (23, 'SANITARIAN'),
+  (24, 'TEKNISI ELEKTROMEDIS'),
+  (25, 'TEKNISI GIGI'),
+  (26, 'TEKNISI TRANSFUSI DARAH'),
+  (27, 'TERAPIS WICARA'),
+  (28, 'PEMBIMBING KESEHATAN KERJA'),
+  (29, 'PENATA ANASTESI'),
+  (30, 'ASISTEN PENATA ANASTESI');
+/*!40000 ALTER TABLE `ref_jabfung` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_jabfung_jenjang
+CREATE TABLE IF NOT EXISTS `ref_jabfung_jenjang` (
+  `id` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `jenjang` varchar(250) NOT NULL,
+  `status_select` int(11) NOT NULL DEFAULT 0,
+  `status_info` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+  KEY `FK_ref_jabfung_kategori_ref_jabfung_jenjang` (`id_kategori`),
+  CONSTRAINT `FK_ref_jabfung_kategori_ref_jabfung_jenjang` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_jabfung_jenjang: ~10 rows (approximately)
+/*!40000 ALTER TABLE `ref_jabfung_jenjang` DISABLE KEYS */;
+INSERT INTO `ref_jabfung_jenjang` (`id`, `id_kategori`, `jenjang`, `status_select`, `status_info`) VALUES
+  (1, 1, 'PENYELIA', 1, 1),
+  (2, 1, 'MAHIR', 1, 1),
+  (3, 1, 'TERAMPIL', 1, 1),
+  (4, 1, 'PEMULA', 1, 1),
+  (5, 2, 'AHLI UTAMA', 1, 1),
+  (6, 2, 'AHLI MADYA', 1, 1),
+  (7, 2, 'AHLI MUDA', 1, 1),
+  (8, 2, 'AHLI PERTAMA', 1, 1),
+  (9, 1, 'SEMUA JENJANG', 0, 1),
+  (10, 2, 'SEMUA JENJANG', 0, 1);
+/*!40000 ALTER TABLE `ref_jabfung_jenjang` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_jabfung_kategori
+CREATE TABLE IF NOT EXISTS `ref_jabfung_kategori` (
+  `id` int(11) NOT NULL,
+  `kategori` varchar(250) NOT NULL,
+  `alias` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_jabfung_kategori: ~2 rows (approximately)
+/*!40000 ALTER TABLE `ref_jabfung_kategori` DISABLE KEYS */;
+INSERT INTO `ref_jabfung_kategori` (`id`, `kategori`, `alias`) VALUES
+  (1, 'KETERAMPILAN', 'TERAMPIL'),
+  (2, 'KEAHLIAN', 'AHLI');
+/*!40000 ALTER TABLE `ref_jabfung_kategori` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_profile_jabfung
+CREATE TABLE IF NOT EXISTS `ref_profile_jabfung` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `golru` varchar(250) DEFAULT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `tunjangan_jabatan` double NOT NULL DEFAULT 0,
+  `bup` int(11) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `profile_jabfung_kategori` (`id_kategori`),
+  KEY `profile_jabfung_jenjang` (`id_jenjang`),
+  KEY `id_jabatan` (`id_jabatan`),
+  CONSTRAINT `profile_jabfung_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `profile_jabfung_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `profile_jabfung_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_profile_jabfung: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_profile_jabfung` DISABLE KEYS */;
+INSERT INTO `ref_profile_jabfung` (`id_jabatan`, `id_kategori`, `id_jenjang`, `golru`, `angka_kredit`, `tunjangan_jabatan`, `bup`) VALUES
+  (1, 1, 1, 'IIA', 23.8, 340000, 56);
+/*!40000 ALTER TABLE `ref_profile_jabfung` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek1
+CREATE TABLE IF NOT EXISTS `ref_rek1` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`id_jabatan`,`id_kategori`,`id_jenjang`,`point`),
+  KEY `ref1_kategori` (`id_kategori`),
+  KEY `ref1_jenjang` (`id_jenjang`),
+  KEY `ref1_jabatan` (`id_jabatan`),
+  KEY `point` (`point`),
+  CONSTRAINT `ref1_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref1_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref1_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek1: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek1` DISABLE KEYS */;
+INSERT INTO `ref_rek1` (`id_jabatan`, `id_kategori`, `id_jenjang`, `point`, `butir_kegiatan`, `satuan_hasil`, `angka_kredit`, `pelaksana`) VALUES
+  (17, 1, 3, '1', 'blablabla', 'Per Laporan', 60, 'Semua Jenjang');
+/*!40000 ALTER TABLE `ref_rek1` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek2
+CREATE TABLE IF NOT EXISTS `ref_rek2` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `ref2_jabatan` (`id_jabatan`),
+  KEY `ref2_kategori` (`id_kategori`),
+  KEY `ref2_jenjang` (`id_jenjang`),
+  KEY `dduuuua` (`point_induk`),
+  KEY `super2` (`point_super_induk`),
+  CONSTRAINT `dduuuua` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek1` (`point`),
+  CONSTRAINT `ref2_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref2_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref2_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `super2` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek2: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek2` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek3
+CREATE TABLE IF NOT EXISTS `ref_rek3` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `tiga` (`point_induk`),
+  KEY `ref3_jabatan` (`id_jabatan`),
+  KEY `ref3_kategori` (`id_kategori`),
+  KEY `ref3_jenjang` (`id_jenjang`),
+  KEY `super3` (`point_super_induk`),
+  CONSTRAINT `ref3_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref3_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref3_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `super3` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`),
+  CONSTRAINT `tiga` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek2` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek3: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek3` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek3` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek4
+CREATE TABLE IF NOT EXISTS `ref_rek4` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `empat` (`point_induk`),
+  KEY `ref4_jabatan` (`id_jabatan`),
+  KEY `ref4_kategori` (`id_kategori`),
+  KEY `ref4_jenjang` (`id_jenjang`),
+  KEY `super4` (`point_super_induk`),
+  CONSTRAINT `empat` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek3` (`point`),
+  CONSTRAINT `ref4_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref4_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref4_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `super4` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek4: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek4` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek4` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek5
+CREATE TABLE IF NOT EXISTS `ref_rek5` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `lima` (`point_induk`),
+  KEY `ref5_jabatan` (`id_jabatan`),
+  KEY `ref5_kategori` (`id_kategori`),
+  KEY `ref5_jenjang` (`id_jenjang`),
+  KEY `super5` (`point_super_induk`),
+  CONSTRAINT `lima` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek4` (`point`),
+  CONSTRAINT `ref5_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref5_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref5_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `super5` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek5: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek5` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek5` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek6
+CREATE TABLE IF NOT EXISTS `ref_rek6` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `enam` (`point_induk`),
+  KEY `ref6_jabatan` (`id_jabatan`),
+  KEY `ref6_kategori` (`id_kategori`),
+  KEY `ref6_jenjang` (`id_jenjang`),
+  KEY `super6` (`point_super_induk`),
+  CONSTRAINT `enam` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek5` (`point`),
+  CONSTRAINT `ref6_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref6_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref6_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `super6` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek6: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek6` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek6` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek7
+CREATE TABLE IF NOT EXISTS `ref_rek7` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `tujuh` (`point_induk`),
+  KEY `ref7_jabatan` (`id_jabatan`),
+  KEY `ref7_kategori` (`id_kategori`),
+  KEY `ref7_jenjang` (`id_jenjang`),
+  KEY `super7` (`point_super_induk`),
+  CONSTRAINT `ref7_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref7_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref7_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `super7` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`),
+  CONSTRAINT `tujuh` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek6` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek7: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek7` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek7` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek8
+CREATE TABLE IF NOT EXISTS `ref_rek8` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `delapan` (`point_induk`),
+  KEY `ref8_jabatan` (`id_jabatan`),
+  KEY `ref8_kategori` (`id_kategori`),
+  KEY `ref8_jenjang` (`id_jenjang`),
+  CONSTRAINT `delapan` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek7` (`point`),
+  CONSTRAINT `ref8_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref8_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref8_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek8: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek8` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek8` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_rek9
+CREATE TABLE IF NOT EXISTS `ref_rek9` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `point` varchar(7) NOT NULL,
+  `point_induk` varchar(7) NOT NULL,
+  `point_super_induk` varchar(7) NOT NULL,
+  `butir_kegiatan` text NOT NULL,
+  `satuan_hasil` varchar(250) NOT NULL,
+  `angka_kredit` double NOT NULL DEFAULT 0,
+  `pelaksana` varchar(250) NOT NULL,
+  PRIMARY KEY (`point`,`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `sembilan` (`point_induk`),
+  KEY `ref9_jabatan` (`id_jabatan`),
+  KEY `ref9_kategori` (`id_kategori`),
+  KEY `ref9_jenjang` (`id_jenjang`),
+  KEY `super9` (`point_super_induk`),
+  CONSTRAINT `ref9_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `ref9_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `ref9_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`),
+  CONSTRAINT `sembilan` FOREIGN KEY (`point_induk`) REFERENCES `ref_rek8` (`point`),
+  CONSTRAINT `super9` FOREIGN KEY (`point_super_induk`) REFERENCES `ref_rek1` (`point`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- Dumping data for table diklatpim_e_dupak.ref_rek9: ~0 rows (approximately)
+/*!40000 ALTER TABLE `ref_rek9` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ref_rek9` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.ref_skpd
+CREATE TABLE IF NOT EXISTS `ref_skpd` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_skpd` text DEFAULT NULL,
+  `nip_pimpinan` text DEFAULT NULL,
+  `nama_pimpinan` text DEFAULT NULL,
+  `jabatan_pimpinan` text DEFAULT NULL,
+  `pangkat_pimpinan` text DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.ref_skpd: ~18 rows (approximately)
+/*!40000 ALTER TABLE `ref_skpd` DISABLE KEYS */;
+INSERT INTO `ref_skpd` (`id`, `nama_skpd`, `nip_pimpinan`, `nama_pimpinan`, `jabatan_pimpinan`, `pangkat_pimpinan`) VALUES
+  (1, 'DINAS KESEHATAN', NULL, NULL, NULL, NULL),
+  (2, 'RSUD ANDI DJEMMA MASAMBA', NULL, NULL, NULL, NULL),
+  (3, 'UPT TRANSFUSI DARAH', NULL, NULL, NULL, NULL),
+  (4, 'UPT LABORATORIUM KESEHATAN DAERAH', NULL, NULL, NULL, NULL),
+  (5, 'PUSKESMAS SABBANG', NULL, NULL, NULL, NULL),
+  (6, 'PUSKESMAS BAEBUNTA', NULL, NULL, NULL, NULL),
+  (7, 'PUSKESMAS LARA', NULL, NULL, NULL, NULL),
+  (8, 'PUSKESMAS MASAMBA', NULL, NULL, NULL, NULL),
+  (9, 'PUSKESMAS MALANGKE', NULL, NULL, NULL, NULL),
+  (10, 'PUSKESMAS MALANGKE BARAT', NULL, NULL, NULL, NULL),
+  (11, 'PUSKESMAS CENDANA PUTIH', NULL, NULL, NULL, NULL),
+  (12, 'PUSKESMAS SUKAMAJU', NULL, NULL, NULL, NULL),
+  (13, 'PUSKESMAS WONOKERTO', NULL, NULL, NULL, NULL),
+  (14, 'PUSKESMAS BONE-BONE', NULL, NULL, NULL, NULL),
+  (15, 'PUSKESMAS TANA LILI', NULL, NULL, NULL, NULL),
+  (16, 'PUSKESMAS LIMBONG', NULL, NULL, NULL, NULL),
+  (17, 'PUSKESMAS SEKO', NULL, NULL, NULL, NULL),
+  (18, 'PUSKESMAS RAMPI', NULL, NULL, NULL, NULL);
+/*!40000 ALTER TABLE `ref_skpd` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.tb_log_book
+CREATE TABLE IF NOT EXISTS `tb_log_book` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `id_unsur` int(11) NOT NULL DEFAULT 0,
+  `id_urutan` int(11) NOT NULL DEFAULT 0,
+  `nip` varchar(50) NOT NULL,
+  `tgl_logbook` date NOT NULL,
+  `jumlah_logbook` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_jabatan`,`id_kategori`,`id_jenjang`,`nip`,`tgl_logbook`,`id_unsur`,`id_urutan`),
+  KEY `lookbook_kategori` (`id_kategori`),
+  KEY `lookbook_jenjang` (`id_jenjang`),
+  CONSTRAINT `lookbook_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `lookbook_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `lookbook_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.tb_log_book: ~1 rows (approximately)
+/*!40000 ALTER TABLE `tb_log_book` DISABLE KEYS */;
+INSERT INTO `tb_log_book` (`id_jabatan`, `id_kategori`, `id_jenjang`, `id_unsur`, `id_urutan`, `nip`, `tgl_logbook`, `jumlah_logbook`) VALUES
+  (23, 2, 8, 1, 6, '197805142010012001', '2019-12-19', 2);
+/*!40000 ALTER TABLE `tb_log_book` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.tb_pegawai
+CREATE TABLE IF NOT EXISTS `tb_pegawai` (
+  `nip` varchar(50) NOT NULL,
+  `nip_lama` varchar(50) DEFAULT NULL,
+  `nik` varchar(50) DEFAULT NULL,
+  `nama` varchar(250) DEFAULT NULL,
+  `jenis_kelamin` varchar(50) DEFAULT NULL,
+  `tempat_lahir` varchar(250) DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `tgl_lahir` varchar(50) DEFAULT NULL,
+  `id_golru` varchar(50) DEFAULT NULL,
+  `golru` varchar(50) DEFAULT NULL,
+  `tmt_golru` date DEFAULT NULL,
+  `ttmt_golru` varchar(50) DEFAULT NULL,
+  `pendidikan_terakhir` varchar(50) DEFAULT NULL,
+  `nama_pendidikan` text DEFAULT NULL,
+  `id_skpd` int(11) DEFAULT NULL,
+  `id_jabatan` int(11) DEFAULT NULL,
+  `id_kategori` int(11) DEFAULT NULL,
+  `id_jenjang` int(11) DEFAULT NULL,
+  PRIMARY KEY (`nip`),
+  KEY `pegawai_jabatan` (`id_jabatan`),
+  KEY `pegawai_kategori` (`id_kategori`),
+  KEY `pegawai_jenjang` (`id_jenjang`),
+  CONSTRAINT `pegawai_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `pegawai_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `pegawai_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.tb_pegawai: ~1 rows (approximately)
+/*!40000 ALTER TABLE `tb_pegawai` DISABLE KEYS */;
+INSERT INTO `tb_pegawai` (`nip`, `nip_lama`, `nik`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `tgl_lahir`, `id_golru`, `golru`, `tmt_golru`, `ttmt_golru`, `pendidikan_terakhir`, `nama_pendidikan`, `id_skpd`, `id_jabatan`, `id_kategori`, `id_jenjang`) VALUES
+  ('197805142010012001', '123', '123', 'ISRA ANDIKA BAKHRI', 'L', 'Ujung Pandang', '1995-01-07', NULL, '10', 'III/C', '2016-01-10', NULL, 'S1', 'S1 - KEDOKTERAN GIGI', 2, 23, 2, 8);
+/*!40000 ALTER TABLE `tb_pegawai` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.tb_profile_aplikasi
+CREATE TABLE IF NOT EXISTS `tb_profile_aplikasi` (
+  `id` int(11) NOT NULL,
+  `tahun` char(50) DEFAULT NULL,
+  `semester` char(50) DEFAULT NULL,
+  `kab_or_kota` char(50) DEFAULT NULL,
+  `nama_kab_or_kota` char(250) DEFAULT NULL,
+  `pusat_kab_or_kota` char(250) DEFAULT NULL,
+  `provinsi` char(250) DEFAULT NULL,
+  `nama_instansi` varchar(250) DEFAULT NULL,
+  `logo_tab` varchar(250) DEFAULT NULL,
+  `logo_login` varchar(250) DEFAULT NULL,
+  `logo_header` varchar(250) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.tb_profile_aplikasi: ~0 rows (approximately)
+/*!40000 ALTER TABLE `tb_profile_aplikasi` DISABLE KEYS */;
+INSERT INTO `tb_profile_aplikasi` (`id`, `tahun`, `semester`, `kab_or_kota`, `nama_kab_or_kota`, `pusat_kab_or_kota`, `provinsi`, `nama_instansi`, `logo_tab`, `logo_login`, `logo_header`) VALUES
+  (1, '2019', 'GENAP', 'KABUPATEN', 'LUWU UTARA', 'MASAMBA', 'SULAWESI SELATAN', 'DINAS KESEHATAN', NULL, NULL, NULL);
+/*!40000 ALTER TABLE `tb_profile_aplikasi` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.tb_rencana_kerja_jabfung
+CREATE TABLE IF NOT EXISTS `tb_rencana_kerja_jabfung` (
+  `id_jabatan` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `id_jenjang` int(11) NOT NULL,
+  `butir_kegiatan` text DEFAULT NULL,
+  `satuan_volume` text DEFAULT NULL,
+  `angka_kredit` double DEFAULT NULL,
+  `pelaksana` char(50) DEFAULT NULL,
+  PRIMARY KEY (`id_jabatan`,`id_kategori`,`id_jenjang`),
+  KEY `rencana_kategori` (`id_kategori`),
+  KEY `rencana_jenjang` (`id_jenjang`),
+  CONSTRAINT `rencana_jabatan` FOREIGN KEY (`id_jabatan`) REFERENCES `ref_jabfung` (`id`),
+  CONSTRAINT `rencana_jenjang` FOREIGN KEY (`id_jenjang`) REFERENCES `ref_jabfung_jenjang` (`id`),
+  CONSTRAINT `rencana_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `ref_jabfung_kategori` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Dumping data for table diklatpim_e_dupak.tb_rencana_kerja_jabfung: ~0 rows (approximately)
+/*!40000 ALTER TABLE `tb_rencana_kerja_jabfung` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tb_rencana_kerja_jabfung` ENABLE KEYS */;
+
+-- Dumping structure for table diklatpim_e_dupak.tb_users
+CREATE TABLE IF NOT EXISTS `tb_users` (
+  `id` varchar(50) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(150) DEFAULT NULL,
+  `hak_akses` varchar(150) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Dumping data for table diklatpim_e_dupak.tb_users: ~2 rows (approximately)
+/*!40000 ALTER TABLE `tb_users` DISABLE KEYS */;
+INSERT INTO `tb_users` (`id`, `nama`, `username`, `password`, `hak_akses`) VALUES
+  ('1', 'ADMIN', 'admin', '202cb962ac59075b964b07152d234b70', 'ADMIN'),
+  ('197805142010012001', 'ASMAWATI', '197805142010012001', '202cb962ac59075b964b07152d234b70', NULL);
+/*!40000 ALTER TABLE `tb_users` ENABLE KEYS */;
+
+-- Dumping structure for procedure diklatpim_e_dupak.xget_data_pegawai_per_pegawai
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `xget_data_pegawai_per_pegawai`(
+  IN `prm_nip` VARCHAR(50)
+
+)
+BEGIN
+  SELECT a.*, b.nama_skpd, b.nip_pimpinan, b.nama_pimpinan, b.jabatan_pimpinan, c.nama_jabatan, d.alias AS kategori, e.jenjang, f.golru2 as golongan, f.pangkat 
+  FROM tb_pegawai a 
+  LEFT JOIN ref_skpd b ON a.id_skpd = b.id
+  LEFT JOIN ref_jabfung c ON a.id_jabatan = c.id
+  LEFT JOIN ref_jabfung_kategori d ON a.id_kategori = d.id
+  LEFT JOIN ref_jabfung_jenjang e ON a.id_jenjang = e.id
+  LEFT JOIN ref_golru f ON a.id_golru = f.id_golru
+  WHERE a.nip = prm_nip;
+END//
+DELIMITER ;
+
+-- Dumping structure for procedure diklatpim_e_dupak.xtampil_log_book_per_pegawai
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `xtampil_log_book_per_pegawai`(
+  IN `prm_IDjab` INT,
+  IN `prm_IDkat` INT,
+  IN `prm_IDjen` INT,
+  IN `prm_nip` VARCHAR(50),
+  IN `prm_bln` INT,
+  IN `prm_thn` INT
+
+
+)
+BEGIN
+  SELECT a.*, 
+       c.unsur,
+         b.urutan, b.butir_kegiatan, b.satuan_hasil, b.angka_kredit,
+       a.jumlah_logbook*b.angka_kredit AS jumlah_angka_kredit
+  FROM tb_log_book a 
+  LEFT JOIN ref_butir_kegiatan b ON a.id_unsur = b.id_unsur AND a.id_urutan = b.urutan
+  LEFT JOIN ref_butir_kegiatan_unsur c ON a.id_unsur = c.id_unsur
+  WHERE a.id_jabatan  = prm_IDjab 
+  AND   a.id_kategori = prm_IDkat
+  AND   a.id_jenjang  = prm_IDjen
+  AND   a.nip  = prm_nip
+  AND   MONTH(a.tgl_logbook) = prm_bln
+  AND   YEAR(a.tgl_logbook) = prm_thn
+  GROUP BY id_unsur, id_urutan;
+END//
+DELIMITER ;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
